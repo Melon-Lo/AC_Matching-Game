@@ -1,0 +1,101 @@
+#cards {
+  /* axis: row */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  /* 卡片在容器裡面的排版 */
+  flex: 7% 0 1;
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+
+  margin: 2px;
+  box-sizing: border-box;
+
+  /* 卡片內部元素的排版 */
+  display: flex;
+
+  /* main axis */
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background-image: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  background-size: cover;
+}
+
+.paired {
+  background-color: #72b3d3;
+}
+
+#header {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+#header .title {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h3 {
+  padding-left: 0.5em;
+}
+
+.wrong {
+  animation: wrongAnimation 0.2s;
+  animation-iteration-count: 5;
+}
+
+/* 關鍵影格 */
+@keyframes wrongAnimation { 
+  100% {
+    border: 2px solid #f50e0e
+  }
+}
+
+/* Game finished */
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: rgba(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
